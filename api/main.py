@@ -8,4 +8,5 @@ class handler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write('Hello, world!'.encode('utf-8'))
         JSON = '{"message": "Hello, world!"}'
+        print(JSON)
         return  JSON
