@@ -1,12 +1,6 @@
-from http.server import BaseHTTPRequestHandler
- 
-class handler(BaseHTTPRequestHandler):
- 
-    def do_GET(self):
-        self.send_response(200)
-        self.send_header('Content-type','text/plain')
-        self.end_headers()
-        self.wfile.write('Hello, world!'.encode('utf-8'))
-        JSON = '{"message": "Hello, world!"}'
-        print(JSON)
-        return  JSON
+from flask import Flask
+app = Flask(__name__)
+
+@app.route('/api/hello', methods=['GET'])
+def hello_world():
+    return "Hello, World!"
